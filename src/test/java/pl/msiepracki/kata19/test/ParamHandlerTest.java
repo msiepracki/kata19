@@ -18,6 +18,11 @@ import org.junit.Test;
 import pl.msiepracki.kata19.inputhandlers.ParamHandler;
 import pl.msiepracki.kata19.inputhandlers.ParamsPojo;
 
+/**
+ * 
+ * @author Mateusz Siepracki
+ *
+ */
 public class ParamHandlerTest {
 	private String par1 = "aaa";
 	private String par2 = "bbb";
