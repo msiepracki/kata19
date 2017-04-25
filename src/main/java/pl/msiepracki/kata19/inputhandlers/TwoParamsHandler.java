@@ -29,16 +29,11 @@ public class TwoParamsHandler implements ParamHandlersInterface {
 		List<String> dict = new ArrayList<String>();
 		InputStream in = this.getClass().getResourceAsStream("/wordlist.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-		try {
-			String word;
-			while ((word = reader.readLine()) != null) {
-				dict.add(word.trim());
-			}
-		} catch (IOException e) {
-			System.err.println("IOException: " + e.getMessage());
-		} finally {
-			reader.close();
+		String word;
+		while ((word = reader.readLine()) != null) {
+			dict.add(word.trim());
 		}
+		reader.close();
 		return dict;
 	}
 

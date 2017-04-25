@@ -17,19 +17,19 @@ public class WordChains {
 	private Queue<String> potentialNeighbours;
 	private Map<String, String> wordT;
 
-	public String solve(String a, String b, List<String> dict) {
+	public String solve(String wordA, String wordB, List<String> dict) {
 		WordDictionary dictionary = new WordDictionary(dict);
-		dictionary.validateWords(a, b);
-		if (a.equalsIgnoreCase(b))
-			return a;
+		dictionary.validateWords(wordA, wordB);
+		if (wordA.equalsIgnoreCase(wordB))
+			return wordA;
 
 		potentialNeighbours = new LinkedList<>();
-		potentialNeighbours.add(a);
+		potentialNeighbours.add(wordA);
 
 		wordT = new HashMap<String, String>();
-		wordT.put(a, null);
+		wordT.put(wordA, null);
 
-		return findNext(b, dictionary.getSameLengthWords(a));
+		return findNext(wordB, dictionary.getSameLengthWords(wordA));
 
 	}
 

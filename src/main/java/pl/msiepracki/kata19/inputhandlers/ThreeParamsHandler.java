@@ -33,16 +33,11 @@ public class ThreeParamsHandler implements ParamHandlersInterface {
 		List<String> dict = new ArrayList<String>();
 		InputStream in = new FileInputStream(Paths.get(path).toFile());
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-		try {
-			String word;
-			while ((word = reader.readLine()) != null) {
-				dict.add(word.trim());
-			}
-		} catch (IOException e) {
-			System.err.println("IOException: " + e.getMessage());
-		} finally {
-			reader.close();
+		String word;
+		while ((word = reader.readLine()) != null) {
+			dict.add(word.trim());
 		}
+		reader.close();
 		return dict;
 	}
 
